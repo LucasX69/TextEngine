@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TextEngine:jar">
+    <output-path>$PROJECT_DIR$/out/</output-path>
+    <root id="archive" name="TextEngine.jar">
+      <element id="module-output" name="TextEngine" />
+    </root>
+  </artifact>
+</component>

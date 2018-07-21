@@ -1,4 +1,4 @@
-package Enums;
+package Engine.Enums;
 
 public enum JobType {
 

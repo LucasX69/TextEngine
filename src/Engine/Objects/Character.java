@@ -1,7 +1,7 @@
-package Objects;
+package Engine.Objects;
 
-import Enums.Gender;
-import Enums.Job;
+import Engine.Enums.Gender;
+import Engine.Enums.Job;
 
 public class Character {
 

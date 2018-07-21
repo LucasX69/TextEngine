@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f59c77c-673b-42de-b8b8-4bd13c1c55c0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Characters/Character_Template.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Characters/Test.tec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enums/JobType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Objects/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tools/CharacterHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tools/FileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tools/SaveHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TextEngine_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Characters/Test.tec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Characters/Character_Template.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Characters/Character_Template.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Enums/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Enums/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums/JobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Enums/JobType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Objects/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Objects/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/CharacterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/CharacterHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tools/SaveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/SaveHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,47 +30,29 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game.java">
+        <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tools/SaveHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Character.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Objects/Character.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#151#152#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Character_Template.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Characters/Character_Template.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="102">
+                <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.tec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Characters/Test.tec">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -84,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/Tools/SaveHandler.java" />
         <option value="$PROJECT_DIR$/src/Characters/NPC_Template.txt" />
         <option value="$PROJECT_DIR$/src/Tools/Gender.java" />
@@ -93,6 +79,9 @@
         <option value="$PROJECT_DIR$/src/Enums/Job.java" />
         <option value="$PROJECT_DIR$/src/Enums/Gender.java" />
         <option value="$PROJECT_DIR$/src/Objects/Character.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/Plan.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -124,35 +113,6 @@
               <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Characters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Objects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TextEngine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TextEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Tools" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -166,6 +126,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -238,18 +201,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532177156167</updated>
-      <workItem from="1532177162323" duration="1968000" />
+      <workItem from="1532177162323" duration="5933000" />
     </task>
+    <task id="LOCAL-00001" summary="Made a Character Template, extension will be &quot;tec&quot; (TextEngineCharacter)&#10;Created the first 3 genders, which may be expanded upon, based on what the game will be about.&#10;Created the Jobs enum with the Type of Job, will be expanded upon.&#10;A basic Character class has been made.&#10;Created 3 handler files, still need to be made.&#10;Game.java exists, but is nothing.&#10;&#10;This commit is just some easy thoughts I had, next step is to actually create the framework.">
+      <created>1532179680156</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532179680156</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1968000" />
+    <option name="totallyTimeSpent" value="5933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
@@ -260,11 +232,11 @@
       <window_info id="Designer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -278,17 +250,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Made a Character Template, extension will be &quot;tec&quot; (TextEngineCharacter)&#10;Created the first 3 genders, which may be expanded upon, based on what the game will be about.&#10;Created the Jobs enum with the Type of Job, will be expanded upon.&#10;A basic Character class has been made.&#10;Created 3 handler files, still need to be made.&#10;Game.java exists, but is nothing.&#10;&#10;This commit is just some easy thoughts I had, next step is to actually create the framework." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made a Character Template, extension will be &quot;tec&quot; (TextEngineCharacter)&#10;Created the first 3 genders, which may be expanded upon, based on what the game will be about.&#10;Created the Jobs enum with the Type of Job, will be expanded upon.&#10;A basic Character class has been made.&#10;Created 3 handler files, still need to be made.&#10;Game.java exists, but is nothing.&#10;&#10;This commit is just some easy thoughts I had, next step is to actually create the framework." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Characters/Test.tec">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Characters/NPC_Template.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -296,28 +263,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/SaveHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/SaveHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/CharacterHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/CharacterHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tools/FileHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/FileHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enums/JobType.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Enums/JobType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
@@ -328,14 +295,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enums/Job.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Enums/Job.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enums/Gender.java">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Enums/Gender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
@@ -346,29 +313,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Characters/Character_Template.txt">
+    <entry file="file://$PROJECT_DIR$/src/Engine/Objects/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="289">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Characters/Character_Template.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Characters/Test.tec">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plan.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>TextEngine:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TextEngine</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

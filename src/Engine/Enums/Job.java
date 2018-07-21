@@ -1,6 +1,6 @@
-package Enums;
+package Engine.Enums;
 
-import static Enums.JobType.POLICE;
+import static Engine.Enums.JobType.POLICE;
 
 public enum Job {
 
