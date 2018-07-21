@@ -1,0 +1,8 @@
+Just a file where the template will go
+Between the brackets is an explanation of the attribute
+Name: "X"
+Age: X
+Gender: X ( <- MALE, FEMALE, OTHER)
+Background: "X" ( <- short story about their life, I guess)
+BirthPlace: "X" ( <- place where the character was born)
+Job: X (<- PO, CHEF, ...)
