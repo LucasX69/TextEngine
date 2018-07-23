@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-public class SideBar extends Pane {
+public class SideBar extends Pane implements Window {
 
     Button showHide;
     boolean visibility;
@@ -35,15 +35,6 @@ public class SideBar extends Pane {
         }
 
         showHide.setBackground(hideButton);
-
-        // Will be on the side of the screen
-        setLayoutX(0);
-        setLayoutY(0);
-        setMinWidth(WIDTH);
-        layoutXProperty().bind(field.layoutXProperty());
-        layoutYProperty().bind(field.layoutYProperty());
-        prefWidthProperty().bind(field.widthProperty().divide(8));
-        prefHeightProperty().bind(field.heightProperty());
 
         showHide.setOnAction(event -> {
             if (visibility) {
@@ -76,4 +67,14 @@ public class SideBar extends Pane {
         showHide.layoutXProperty().bind(this.widthProperty().subtract(BUTTONSIZE));
     }
 
+    @Override
+    public void setLocation(Backfield field) {
+        setLayoutX(0);
+        setLayoutY(0);
+        setMinWidth(WIDTH);
+        layoutXProperty().bind(field.layoutXProperty());
+        layoutYProperty().bind(field.layoutYProperty());
+        prefWidthProperty().bind(field.widthProperty().divide(8));
+        prefHeightProperty().bind(field.heightProperty());
+    }
 }

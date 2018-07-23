@@ -28,10 +28,9 @@ public class Game extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        TextWindow x = (TextWindow)root.children.get(2);
-        x.addText("Hello");
-        x.addText("Hello");
-        x.addText("Hello");
-        x.addText("Hello");
+        TextWindow x = (TextWindow)root.getChilds().get(2);
+        for (int i = 0; i < 500; i++) {
+            x.addText("TEST ");
+        }
     }
 }

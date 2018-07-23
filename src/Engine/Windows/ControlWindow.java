@@ -7,12 +7,14 @@ import javafx.scene.layout.Pane;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControlWindow extends Pane {
+public class ControlWindow extends Pane implements Window {
 
     private HBox row;
     private List<Button> listRow;
 
-    ControlWindow(Backfield field, SideBar side) {
+    ControlWindow() {
+        // field.getChilds().get(1) = Side
+
         listRow = new ArrayList<>();
         row = new HBox();
         for (int i = 0; i < 5; i++) {
@@ -23,15 +25,17 @@ public class ControlWindow extends Pane {
 
         // Add the row
         getChildren().add(row);
-
-        // Set the location
-        layoutXProperty().bind(side.widthProperty());
-        layoutYProperty().bind(field.heightProperty().subtract(field.heightProperty().divide(7)));
-        prefHeightProperty().bind(field.heightProperty().divide(7));
-        prefWidthProperty().bind(field.widthProperty().subtract(side.widthProperty()));
     }
 
     public List<Button> getListRow() {
         return listRow;
+    }
+
+    @Override
+    public void setLocation(Backfield field) {
+        layoutXProperty().bind(field.getChilds().get(1).widthProperty());
+        layoutYProperty().bind(field.heightProperty().subtract(field.heightProperty().divide(7)));
+        prefHeightProperty().bind(field.heightProperty().divide(7));
+        prefWidthProperty().bind(field.widthProperty().subtract(field.getChilds().get(1).widthProperty()));
     }
 }

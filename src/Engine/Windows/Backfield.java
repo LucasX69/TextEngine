@@ -1,11 +1,7 @@
 package Engine.Windows;
 
 import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
@@ -13,25 +9,34 @@ import java.util.List;
 
 public class Backfield extends Pane {
 
-    public List<Node> children;
+    private List<Region> childs;
 
     public Backfield(String showButtonPath, String hideButtonPath) {
-        children = new ArrayList<>();
+        childs = new ArrayList<>();
 
         SideBar side = new SideBar(this, hideButtonPath, showButtonPath);
-        ControlWindow bottom = new ControlWindow(this, side);
-        AbstractWindow main = new TextWindow(this, side);
+        ControlWindow bottom = new ControlWindow();
+        AbstractWindow main = new TextWindow();
 
         side.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         bottom.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
         main.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
 
-        children.add(side);
-        children.add(bottom);
-        children.add(main);
+        childs.add(bottom);
+        childs.add(side);
+        childs.add(main);
+
+        for (Region region : childs) {
+            if (region instanceof Window) {
+                ((Window) region).setLocation(this);
+            }
+        }
 
         getChildren().addAll(side, bottom, main);
     }
 
+    public List<Region> getChilds() {
+        return childs;
+    }
 }

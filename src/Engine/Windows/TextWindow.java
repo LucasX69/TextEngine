@@ -6,17 +6,24 @@ public class TextWindow extends AbstractWindow {
 
     private TextArea text;
 
-    public TextWindow(Backfield field, SideBar side) {
-        // TODO make text appear correctly
-        super(field, side);
+    public TextWindow() {
+        super();
+        // field.getChilds().get(0) = Bottom
+        // field.getChilds().get(1) = Side
         text = new TextArea();
         text.setEditable(false);
+        text.setWrapText(true);
         getChildren().add(text);
     }
 
     public void addText(String s) {
-        if (!text.getText().isEmpty()) text.appendText("\n");
         text.appendText(s);
     }
 
+    @Override
+    public void setLocation(Backfield field) {
+        super.setLocation(field);
+        text.prefWidthProperty().bind(field.widthProperty().subtract(field.getChilds().get(1).widthProperty()));
+        text.prefHeightProperty().bind(field.heightProperty().subtract(field.getChilds().get(0).heightProperty()));
+    }
 }
