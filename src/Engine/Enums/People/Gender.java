@@ -1,4 +1,4 @@
-package Engine.Enums;
+package Engine.Enums.People;
 
 public enum Gender {
 
