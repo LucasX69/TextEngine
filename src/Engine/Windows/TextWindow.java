@@ -6,7 +6,7 @@ public class TextWindow extends AbstractWindow {
 
     private TextArea text;
 
-    public TextWindow() {
+    TextWindow() {
         super();
         // field.getChilds().get(0) = Bottom
         // field.getChilds().get(1) = Side
@@ -18,6 +18,10 @@ public class TextWindow extends AbstractWindow {
 
     public void addText(String s) {
         text.appendText(s);
+    }
+
+    public void clear() {
+        text.clear();
     }
 
     @Override
