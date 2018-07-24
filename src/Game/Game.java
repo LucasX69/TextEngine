@@ -1,7 +1,7 @@
 package Game;
 
 import Engine.Windows.Backfield;
-import Engine.Windows.TextWindow;
+import Engine.Windows.TextMainWindow;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -28,7 +28,7 @@ public class Game extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        TextWindow x = (TextWindow)root.getChilds().get(2);
+        TextMainWindow x = (TextMainWindow)root.getListChildren().get(2);
         for (int i = 0; i < 500; i++) {
             x.addText("TEST ");
         }

@@ -1,8 +1,8 @@
 package Engine.Windows;
 
-public class CombatWindow extends AbstractWindow {
+public class CombatMainWindow extends AbstractMainWindow {
 
-    public CombatWindow(Backfield field) {
+    public CombatMainWindow(Backfield field) {
         super();
     }
 

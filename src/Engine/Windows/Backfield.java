@@ -10,25 +10,25 @@ import java.util.List;
 
 public class Backfield extends Pane {
 
-    private List<Region> childs;
+    private List<Region> listChildren;
 
     public Backfield(String showButtonPath, String hideButtonPath) {
-        childs = new ArrayList<>();
+        listChildren = new ArrayList<>();
 
         SideBar side = new SideBar(this, hideButtonPath, showButtonPath);
         ControlWindow bottom = new ControlWindow();
-        AbstractWindow main = new TextWindow();
+        AbstractMainWindow main = new TextMainWindow();
 
         side.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         bottom.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
         main.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
 
-        childs.add(bottom);
-        childs.add(side);
-        childs.add(main);
+        listChildren.add(bottom);
+        listChildren.add(side);
+        listChildren.add(main);
 
-        for (Region region : childs) {
+        for (Region region : listChildren) {
             if (region instanceof Window) {
                 ((Window) region).setLocation(this);
             }
@@ -38,11 +38,11 @@ public class Backfield extends Pane {
 
     }
 
-    public List<Region> getChilds() {
-        return childs;
+    public List<Region> getListChildren() {
+        return listChildren;
     }
 
     public void assignKeys(Scene scene) {
-        ((ControlWindow)childs.get(0)).keyStrokes(scene);
+        ((ControlWindow) listChildren.get(0)).keyStrokes(scene);
     }
 }

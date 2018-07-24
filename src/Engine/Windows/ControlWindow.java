@@ -1,7 +1,6 @@
 package Engine.Windows;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import Engine.Choice;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -64,51 +63,33 @@ public class ControlWindow extends Pane implements Window {
         });
     }
 
-    @SafeVarargs
-    final void btnActions(EventHandler<ActionEvent>... events) {
+    /**
+     * Clears the buttons
+     */
+    public void buttonClear() {
         // Clear the buttons
         for (int i = 0; i < listRow.size(); i++) {
             listRow.get(i).setOnAction(null);
             listRow2.get(i).setOnAction(null);
             listRow3.get(i).setOnAction(null);
         }
+    }
 
-        // Assign buttons
-        for (int i = 0; i < listRow.size(); i++) {
-            if (events.length - 1 <= i) {
-                listRow.get(i).setOnAction(events[i]);
-            } else {
-                break;
-            }
-        }
-        if (events.length > listRow.size()) {
-            for (int i = 0; i < listRow2.size(); i++) {
-                if (events.length - 1 <= i) {
-                    listRow2.get(i).setOnAction(events[i + listRow.size()]);
-                } else {
-                    break;
-                }
-            }
-            if (events.length > listRow.size() + listRow2.size()) {
-                for (int i = 0; i < listRow3.size(); i++) {
-                    if (events.length - 1 <= i) {
-                        listRow3.get(i).setOnAction(events[i + listRow.size() + listRow2.size()]);
-                    } else {
-                        break;
-                    }
-                }
-
-            }
-        }
-
+    /**
+     * Tells the button which Choice it needs to use when the button is pressed
+     * @param choice The new event that will happen
+     * @param button The button that needs the Choice
+     */
+    public void setButton(Choice choice, Button button) {
+        button.setOnAction(choice.getEvent());
     }
 
     @Override
     public void setLocation(Backfield field) {
-        layoutXProperty().bind(field.getChilds().get(1).widthProperty());
+        layoutXProperty().bind(field.getListChildren().get(1).widthProperty());
         layoutYProperty().bind(field.heightProperty().subtract(field.heightProperty().divide(7)));
         prefHeightProperty().bind(field.heightProperty().divide(7));
-        prefWidthProperty().bind(field.widthProperty().subtract(field.getChilds().get(1).widthProperty()));
+        prefWidthProperty().bind(field.widthProperty().subtract(field.getListChildren().get(1).widthProperty()));
 
         for (int i = 0; i < listRow.size(); i++) {
             listRow.get(i).prefWidthProperty().bind(this.widthProperty().divide(listRow.size()).subtract(row.getSpacing()));
@@ -120,7 +101,9 @@ public class ControlWindow extends Pane implements Window {
         }
     }
 
-    // This method is so the rest isn't a busy
+    /**
+     * A helper method that creates the buttons and adds them to the Window
+     */
     private void createButtons() {
         listRow.add(new Button("Q"));
         listRow.add(new Button("W"));

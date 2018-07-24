@@ -8,12 +8,12 @@ import javafx.scene.paint.Color;
 
 public class SideBar extends Pane implements Window {
 
-    Button showHide;
-    boolean visibility;
-    Background hideButton;
-    Background showButton;
-    final double WIDTH = 100;
-    final double BUTTONSIZE = 40;
+    private Button showHide;
+    private boolean visibility;
+    private Background hideButton;
+    private Background showButton;
+    private final double WIDTH = 100;
+    private final double BUTTONSIZE = 40;
 
     SideBar(Backfield field, String hidePath, String showPath) {
         showHide = new Button();
@@ -51,7 +51,7 @@ public class SideBar extends Pane implements Window {
         showHide.fire();
     }
 
-    void hide() {
+    private void hide() {
         showHide.setBackground(showButton);
         visibility = false;
         setMinWidth(BUTTONSIZE);
@@ -59,7 +59,7 @@ public class SideBar extends Pane implements Window {
         prefWidthProperty().set(BUTTONSIZE);
     }
 
-    void show(Backfield field) {
+    private void show(Backfield field) {
         showHide.setBackground(hideButton);
         visibility = true;
         setMinWidth(WIDTH);

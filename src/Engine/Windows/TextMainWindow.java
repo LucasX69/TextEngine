@@ -2,14 +2,12 @@ package Engine.Windows;
 
 import javafx.scene.control.TextArea;
 
-public class TextWindow extends AbstractWindow {
+public class TextMainWindow extends AbstractMainWindow {
 
     private TextArea text;
 
-    TextWindow() {
+    TextMainWindow() {
         super();
-        // field.getChilds().get(0) = Bottom
-        // field.getChilds().get(1) = Side
         text = new TextArea();
         text.setEditable(false);
         text.setWrapText(true);
@@ -27,7 +25,7 @@ public class TextWindow extends AbstractWindow {
     @Override
     public void setLocation(Backfield field) {
         super.setLocation(field);
-        text.prefWidthProperty().bind(field.widthProperty().subtract(field.getChilds().get(1).widthProperty()));
-        text.prefHeightProperty().bind(field.heightProperty().subtract(field.getChilds().get(0).heightProperty()));
+        text.prefWidthProperty().bind(field.widthProperty().subtract(field.getListChildren().get(1).widthProperty()));
+        text.prefHeightProperty().bind(field.heightProperty().subtract(field.getListChildren().get(0).heightProperty()));
     }
 }
