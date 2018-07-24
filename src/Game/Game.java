@@ -13,7 +13,7 @@ public class Game extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         String imageDir = "/Game/Images/";
         String hideButton = imageDir + "hideButton.jpg";
         String showButton = imageDir + "showButton.jpg";
@@ -32,5 +32,7 @@ public class Game extends Application {
         for (int i = 0; i < 500; i++) {
             x.addText("TEST ");
         }
+
+        root.assignKeys(scene);
     }
 }

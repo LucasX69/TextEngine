@@ -1,6 +1,7 @@
 package Engine.Windows;
 
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
@@ -34,9 +35,14 @@ public class Backfield extends Pane {
         }
 
         getChildren().addAll(side, bottom, main);
+
     }
 
     public List<Region> getChilds() {
         return childs;
+    }
+
+    public void assignKeys(Scene scene) {
+        ((ControlWindow)childs.get(0)).keyStrokes(scene);
     }
 }
