@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f59c77c-673b-42de-b8b8-4bd13c1c55c0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Engine/Story/Introduction.tes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Engine/Tools/Choice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Engine/Tools/Statics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Choice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Tools/CharacterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/Handlers/CharacterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Tools/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/Handlers/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Tools/SaveHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/Handlers/SaveHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/AbstractMainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/AbstractMainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/Backfield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/Backfield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/CombatMainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/CombatMainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/ControlWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/ControlWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/SideBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/SideBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/TextMainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/TextMainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Engine/Windows/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Windows/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Characters/Character_Template.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Characters/CharacterTemplate.tec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/Tools/Choice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/Choice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +20,8 @@
       <file leaf-file-name="StoryTemplate.tes" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -44,8 +29,32 @@
       <file leaf-file-name="StoryHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="360">
+              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4430#4431#0" expanded="true" />
+                <element signature="e#4498#4499#0" expanded="true" />
+                <element signature="e#4544#4545#0" expanded="true" />
+                <element signature="e#4613#4614#0" expanded="true" />
+                <element signature="e#4662#4663#0" expanded="true" />
+                <element signature="e#4707#4708#0" expanded="true" />
+                <element signature="e#4752#4753#0" expanded="true" />
+                <element signature="e#4819#4820#0" expanded="true" />
+                <element signature="e#4869#4870#0" expanded="true" />
+                <element signature="e#4908#4909#0" expanded="true" />
+                <element signature="e#4954#4955#0" expanded="true" />
+                <element signature="e#4998#4999#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Choice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Choice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +65,8 @@
       <file leaf-file-name="CharacterHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/CharacterHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="595">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,9 +154,9 @@
         <option value="$PROJECT_DIR$/src/Engine/Windows/ControlWindow.java" />
         <option value="$PROJECT_DIR$/src/Engine/Windows/AbstractMainWindow.java" />
         <option value="$PROJECT_DIR$/src/Engine/Choice.java" />
+        <option value="$PROJECT_DIR$/src/Engine/Windows/SideBar.java" />
         <option value="$PROJECT_DIR$/src/Engine/Tools/Choice.java" />
         <option value="$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes" />
-        <option value="$PROJECT_DIR$/src/Engine/Windows/SideBar.java" />
         <option value="$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java" />
       </list>
     </option>
@@ -172,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,6 +243,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,7 +348,8 @@
       <workItem from="1532177162323" duration="6230000" />
       <workItem from="1532202678149" duration="34844000" />
       <workItem from="1532668325670" duration="4170000" />
-      <workItem from="1532672922793" duration="636000" />
+      <workItem from="1532672922793" duration="2217000" />
+      <workItem from="1532719072792" duration="3673000" />
     </task>
     <task id="LOCAL-00001" summary="Made a Character Template, extension will be &quot;tec&quot; (TextEngineCharacter)&#10;Created the first 3 genders, which may be expanded upon, based on what the game will be about.&#10;Created the Jobs enum with the Type of Job, will be expanded upon.&#10;A basic Character class has been made.&#10;Created 3 handler files, still need to be made.&#10;Game.java exists, but is nothing.&#10;&#10;This commit is just some easy thoughts I had, next step is to actually create the framework.">
       <created>1532179680156</created>
@@ -390,11 +400,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532460334798</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Made many structure changes.&#10;Introduced the .tes extension.&#10;Stories will be made using the Template.">
+      <created>1532674808784</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1532674808784</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45880000" />
+    <option name="totallyTimeSpent" value="51134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -409,7 +426,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -422,7 +439,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32941177" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,12 +456,13 @@
     <MESSAGE value="Made the buttons." />
     <MESSAGE value="Buttons now have keys.&#10;Made the first try to get buttons to have new actions" />
     <MESSAGE value="Rename AbstractWindow.java to AbstractMainWindow.java.&#10;Added Choice.java, which will make the choices happen." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename AbstractWindow.java to AbstractMainWindow.java.&#10;Added Choice.java, which will make the choices happen." />
+    <MESSAGE value="Made many structure changes.&#10;Introduced the .tes extension.&#10;Stories will be made using the Template." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made many structure changes.&#10;Introduced the .tes extension.&#10;Stories will be made using the Template." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -471,6 +489,18 @@
           <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4430#4431#0" expanded="true" />
+            <element signature="e#4498#4499#0" expanded="true" />
+            <element signature="e#4544#4545#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#4662#4663#0" expanded="true" />
+            <element signature="e#4707#4708#0" expanded="true" />
+            <element signature="e#4752#4753#0" expanded="true" />
+            <element signature="e#4819#4820#0" expanded="true" />
+            <element signature="e#4869#4870#0" expanded="true" />
+            <element signature="e#4908#4909#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4998#4999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -699,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Choice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Characters/Test.tec">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -720,6 +743,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,30 +773,10 @@
     <entry file="file://$PROJECT_DIR$/src/Engine/Story/Introduction.tes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/FileHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/SaveHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/CharacterHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,19 +787,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/CharacterHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/FileHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Choice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Story/StoryTemplate.tes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Tools/Handlers/StoryHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state relative-caret-position="360">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4430#4431#0" expanded="true" />
+            <element signature="e#4498#4499#0" expanded="true" />
+            <element signature="e#4544#4545#0" expanded="true" />
+            <element signature="e#4613#4614#0" expanded="true" />
+            <element signature="e#4662#4663#0" expanded="true" />
+            <element signature="e#4707#4708#0" expanded="true" />
+            <element signature="e#4752#4753#0" expanded="true" />
+            <element signature="e#4819#4820#0" expanded="true" />
+            <element signature="e#4869#4870#0" expanded="true" />
+            <element signature="e#4908#4909#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
+            <element signature="e#4998#4999#0" expanded="true" />
           </folding>
         </state>
       </provider>

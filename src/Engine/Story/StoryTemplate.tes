@@ -4,7 +4,6 @@
 -- ### is a Sub-Section, continuation of the previous (Sub-)Section
 -- $$ is a variable -> $$PLAYER.name.set("")$$
 -- [[CHOICE_NAME|CHOICE_DESCRIPTION]] is a choice
--- *n* A new line
 #The life of John Doe
 ##John Doe was born
 John Doe was born to a loving father and mother, who despite their shortcomings where good people.
@@ -21,6 +20,7 @@ What does John Doe do?
 [[Run away|Will John Doe run away?]][[Start crying|Maybe crying will gain attention from the adults?]][[Hit them in the balls|This will surely agitate them...]]
 ###Run away
 John Doe safely gets home and tells his parents what happened
+[[...|...]]
 ###Start Crying
 The teacher comes, the bullies try to lie to the teacher about what happened, what does John Doe do?
 [[Truth|This will make the bullies angry]][[Lie|Say you fell]]

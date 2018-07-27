@@ -24,7 +24,7 @@ public class Choice {
      * @param name The name of the choice, will be on the button
      * @param description A short description of the choice
      */
-    Choice(boolean clear, String text, String name, String description) {
+    public Choice(boolean clear, String text, String name, String description) {
         TextMainWindow textMainWindow = (TextMainWindow) abstractMainWindow;
         this.name = name;
         this.description = description;
