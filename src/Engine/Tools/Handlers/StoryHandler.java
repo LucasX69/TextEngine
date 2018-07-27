@@ -5,12 +5,13 @@ import Engine.Tools.Choice;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class StoryHandler {
 
     private FileInputStream fileInputStream;
+    private InputStreamReader inputStreamReader;
     private BufferedReader bufferedReader;
-    String lastChoice;
 
     StoryHandler(String sPath) {
         Path path = Paths.get(sPath);
@@ -20,78 +21,79 @@ public class StoryHandler {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+        inputStreamReader = new InputStreamReader(fileInputStream);
         bufferedReader = new BufferedReader(inputStreamReader);
     }
 
-    public void readChoice() throws IOException {
+    public String read() throws IOException {
         String line;
-
-        // title = 1, section = 2, sub-section = 3
-        int section = 0;
+        StringBuilder text = new StringBuilder();
 
         while((line = bufferedReader.readLine()) != null) {
-            if (isSubSection(line)) {
-                section = 3;
-            } else if(isSection(line)) {
-                section = 2;
-            } else if(isTitle(line)) {
-                section = 1;
-            } else if(isChoice(line)) {
-                StringBuilder prefix = new StringBuilder();
-                StringBuilder name = new StringBuilder();
-                boolean nameDone = false;
-                StringBuilder description = new StringBuilder();
-                StringBuilder suffix = new StringBuilder();
-
-                // An idiotic for loop to retrieve the choices
-                for (char c : line.toCharArray()) {
-                    if (!prefix.toString().equals("[[")) {
-                        if (c == '[') {
-                            prefix.append(c);
-                        }
-                    } else {
-                        if (c != '|' && !nameDone) {
-                            name.append(c);
-                        } else {
-                            if (!nameDone) {
-                                nameDone= true;
-                            }
-                            if (c != ']') {
-                                description.append(c);
-                            } else {
-                                suffix.append(c);
-                                if (suffix.toString().equals("]]")) {
-                                    String text = findChoice(name.toString());
-                                    boolean clear = text.startsWith("2");
-                                    text = text.substring(2, text.length());
-                                    // TODO make this choice do something
-                                    Choice choice = new Choice(clear, text, name.toString(), description.toString());
-                                    prefix = new StringBuilder();
-                                    name = new StringBuilder();
-                                    nameDone = false;
-                                    description = new StringBuilder();
-                                    suffix = new StringBuilder();
-                                }
-                            }
-                        }
-                    }
-                }
-            } else {
-                if (isComment(line)) {
-                    break;
-                } else {
-                    if (containsVariable(line)) {
-
-                    } else {
-
-                    }
-                }
-
+            if (isText(line)) {
+                text.append(line);
+            } else if (containsVariable(line)) {
+                // TODO needs to check if the variable is being assigned or being shown, act accordingly
+            } else if (isChoice(line)) {
+                readChoices(line);
             }
         }
+        return text.toString();
     }
 
+    /**
+     * @param line The line that contains the choices, they should be on their own line.
+     * @return A list of all the choices on this line
+     */
+    private ArrayList<Choice> readChoices(String line) {
+        StringBuilder prefix = new StringBuilder();
+        StringBuilder name = new StringBuilder();
+        boolean nameDone = false;
+        StringBuilder description = new StringBuilder();
+        StringBuilder suffix = new StringBuilder();
+
+        // An idiotic for loop to retrieve the choices
+        ArrayList<Choice> choices = new ArrayList<>();
+        for (char c : line.toCharArray()) {
+            if (!prefix.toString().equals("[[")) {
+                if (c == '[') {
+                    prefix.append(c);
+                }
+            } else {
+                if (c != '|' && !nameDone) {
+                    name.append(c);
+                } else {
+                    if (!nameDone) {
+                        nameDone = true;
+                    }
+                    if (c != ']') {
+                        description.append(c);
+                    } else {
+                        suffix.append(c);
+                        if (suffix.toString().equals("]]")) {
+                            String text = findChoice(name.toString());
+                            boolean clear = text.startsWith("1");
+                            text = text.substring(2, text.length());
+                            choices.add(new Choice(clear, text, name.toString(), description.toString()));
+                            prefix = new StringBuilder();
+                            name = new StringBuilder();
+                            nameDone = false;
+                            description = new StringBuilder();
+                            suffix = new StringBuilder();
+                        }
+                    }
+                }
+            }
+        }
+        return choices;
+    }
+
+    /**
+     * @param name The name of the choice
+     * @return The text that the choice needs.
+     * Adds a 1 or a 2 at the beginning, depending on if it is a Section or a Sub-Section respectively.
+     * @throws IOException If the line can not be read.
+     */
     private String findChoice(String name) throws IOException {
         String line;
         StringBuilder text = new StringBuilder();
@@ -101,13 +103,13 @@ public class StoryHandler {
                 // Sub-Section
                 if (line.contains(name)) {
                     found = true;
-                    text.append('3');
+                    text.append('2');
                 }
             } else if(isSection(line)) {
                 // Section
                 if (line.contains(name)) {
                     found = true;
-                    text.append('2');
+                    text.append('1');
                 }
             } else if((isSection(line) || isSubSection(line)) && found) {
                 break;
@@ -118,26 +120,50 @@ public class StoryHandler {
         return text.toString();
     }
 
-    private boolean isTitle(String line) {
+    /**
+     * @param line The line that is being read
+     * @return True if it is not any of the other special lines
+     */
+    private boolean isText(String line) {
+        return !isSection(line) && !isSubSection(line) && !isChoice(line) && !containsVariable(line) && !isComment(line);
+    }
+
+    /**
+     * @param line The line that is being read
+     * @return True if the line is the start of a Section
+     */
+    private boolean isSection(String line) {
         return line.startsWith("#") && line.charAt(1) != '#';
     }
 
-    private boolean isSection(String line) {
-        return line.startsWith("##") && line.charAt(2) != '#';
-    }
-
+    /**
+     * @param line The line that is being read
+     * @return True if the line is the start of a Sub-Section
+     */
     private boolean isSubSection(String line) {
-        return line.startsWith("###");
+        return line.startsWith("##");
     }
 
+    /**
+     * @param line The line that is being read
+     * @return True if it the line is a choice line
+     */
     private boolean isChoice(String line) {
         return line.startsWith("[[") && line.endsWith("]]");
     }
 
-    private boolean containsVariable(String s) {
-        return s.contains("$$");
+    /**
+     * @param line The line that is being read
+     * @return True if it the line contains a variable
+     */
+    private boolean containsVariable(String line) {
+        return line.contains("$$");
     }
 
+    /**
+     * @param line The line that is being read
+     * @return True if the line is a comments, should be ignored
+     */
     private boolean isComment(String line) {
         return line.startsWith("--");
     }

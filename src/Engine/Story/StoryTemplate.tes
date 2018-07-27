@@ -1,16 +1,16 @@
 -- Everything starting with -- is a comment.
--- # is the Title of the story
--- ## is a Section, after every section, a clear will be done
--- ### is a Sub-Section, continuation of the previous (Sub-)Section
+-- # is a Section, after every section, a clear will be done
+-- ## is a Sub-Section, continuation of the previous (Sub-)Section
 -- $$ is a variable -> $$PLAYER.name.set("")$$
+--                  -> $$PLAYER.name$$
 -- [[CHOICE_NAME|CHOICE_DESCRIPTION]] is a choice
-#The life of John Doe
-##John Doe was born
+#John Doe was born
 John Doe was born to a loving father and mother, who despite their shortcomings where good people.
 They were not poor perse, but they resided on the border of the poverty line.
 John Doe was born in the city of Paris, on the day 16-05-1990
-##Going to school
-###Arriving at school for the first time
+[[Going to school|John Doe will go to school]]
+#Going to school
+##Arriving at school for the first time
 Today is John Doe's first day of school, he is 4 years old and needs to go to school
 -- a long story about his first few days
 But for some reason, older kids decided to pick on John Doe, for being poor.
@@ -18,13 +18,13 @@ John Doe is only 4 years old and already being bullied.
 The bullies are 3 older kids, who are all 9 years old.
 What does John Doe do?
 [[Run away|Will John Doe run away?]][[Start crying|Maybe crying will gain attention from the adults?]][[Hit them in the balls|This will surely agitate them...]]
-###Run away
+##Run away
 John Doe safely gets home and tells his parents what happened
 [[...|...]]
-###Start Crying
+##Start Crying
 The teacher comes, the bullies try to lie to the teacher about what happened, what does John Doe do?
 [[Truth|This will make the bullies angry]][[Lie|Say you fell]]
-###Hit them in the balls
+##Hit them in the balls
 John Doe rushes towards one of the bullies and run straight into his crotch, the bully falls down on the ground in pain.
 $$Bully.attacked.set(1)$$
 The other bullies try to to grab John Doe, but John Doe decided to run away straight afterwards towards one of the teachers.
