@@ -25,27 +25,40 @@ public class StoryHandler {
         bufferedReader = new BufferedReader(inputStreamReader);
     }
 
-    public String read() throws IOException {
+    /**
+     * This method is used to read from the Story file.
+     * @param choice The name of the choice, can be empty, if empty, it will just start from the start of the file, otherwise it will start at the choice.
+     * @return The text that needs to be displayed.
+     * @throws IOException If there is no file to be read.
+     */
+    public String read(String... choice) throws IOException {
         String line;
         StringBuilder text = new StringBuilder();
 
-        while((line = bufferedReader.readLine()) != null) {
-            if (isText(line)) {
-                text.append(line);
-            } else if (containsVariable(line)) {
-                // TODO needs to check if the variable is being assigned or being shown, act accordingly
-            } else if (isChoice(line)) {
-                readChoices(line);
+        if (choice.length == 0) {
+            while ((line = bufferedReader.readLine()) != null) {
+                if (isText(line)) {
+                    text.append(line);
+                } else if (containsVariable(line)) {
+                    // TODO needs to check if the variable is being assigned or being shown, act accordingly
+                } else if (isChoice(line)) {
+                    // TODO these options need to go somewhere, probably to the ControlWindow, need to think about that.
+                    readChoices(line);
+                }
             }
+            return text.toString();
+        } else {
+            String txt = findChoice(choice[0]);
+            return txt.substring(2, txt.length());
         }
-        return text.toString();
     }
 
     /**
      * @param line The line that contains the choices, they should be on their own line.
      * @return A list of all the choices on this line
+     * @throws IOException If there is no file to be read.
      */
-    private ArrayList<Choice> readChoices(String line) {
+    private ArrayList<Choice> readChoices(String line) throws IOException {
         StringBuilder prefix = new StringBuilder();
         StringBuilder name = new StringBuilder();
         boolean nameDone = false;
@@ -58,6 +71,10 @@ public class StoryHandler {
             if (!prefix.toString().equals("[[")) {
                 if (c == '[') {
                     prefix.append(c);
+                } else {
+                    // TODO make an exception happen, I guess a custom one.
+                    System.out.println("Something is wrong.");
+                    break;
                 }
             } else {
                 if (c != '|' && !nameDone) {
@@ -66,20 +83,27 @@ public class StoryHandler {
                     if (!nameDone) {
                         nameDone = true;
                     }
-                    if (c != ']') {
+                    if (c != ']' && suffix.toString().isEmpty()) {
                         description.append(c);
                     } else {
-                        suffix.append(c);
-                        if (suffix.toString().equals("]]")) {
-                            String text = findChoice(name.toString());
-                            boolean clear = text.startsWith("1");
-                            text = text.substring(2, text.length());
-                            choices.add(new Choice(clear, text, name.toString(), description.toString()));
-                            prefix = new StringBuilder();
-                            name = new StringBuilder();
-                            nameDone = false;
-                            description = new StringBuilder();
-                            suffix = new StringBuilder();
+                        // Simple check to see if the suffix is actually 2x ] and not 1x or something in between.
+                        if (c != ']') {
+                            // TODO make an exception happen
+                            System.out.println("Something went wrong.");
+                        } else {
+                            suffix.append(c);
+
+                            if (suffix.toString().equals("]]")) {
+                                String text = findChoice(name.toString());
+                                boolean clear = text.startsWith("1");
+                                text = text.substring(2, text.length());
+                                choices.add(new Choice(clear, text, name.toString(), description.toString()));
+                                prefix = new StringBuilder();
+                                name = new StringBuilder();
+                                nameDone = false;
+                                description = new StringBuilder();
+                                suffix = new StringBuilder();
+                            }
                         }
                     }
                 }
@@ -89,15 +113,19 @@ public class StoryHandler {
     }
 
     /**
+     * Will go through the file to look for a specific choice.
      * @param name The name of the choice
      * @return The text that the choice needs.
      * Adds a 1 or a 2 at the beginning, depending on if it is a Section or a Sub-Section respectively.
      * @throws IOException If the line can not be read.
      */
     private String findChoice(String name) throws IOException {
+        // TODO make it so that the bufferedReader starts from the start.
+
         String line;
         StringBuilder text = new StringBuilder();
         boolean found = false;
+
         while((line = bufferedReader.readLine()) != null) {
             if (isSubSection(line)) {
                 // Sub-Section
