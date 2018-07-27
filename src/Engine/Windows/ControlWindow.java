@@ -1,6 +1,6 @@
 package Engine.Windows;
 
-import Engine.Choice;
+import Engine.Tools.Choice;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -9,6 +9,8 @@ import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static Engine.Tools.Statics.*;
 
 public class ControlWindow extends Pane implements Window {
 
@@ -21,6 +23,8 @@ public class ControlWindow extends Pane implements Window {
     private List<Button> listRow3;
 
     ControlWindow() {
+        controlWindow = this;
+
         listRow = new ArrayList<>();
         listRow2 = new ArrayList<>();
         listRow3 = new ArrayList<>();
@@ -85,11 +89,11 @@ public class ControlWindow extends Pane implements Window {
     }
 
     @Override
-    public void setLocation(Backfield field) {
-        layoutXProperty().bind(field.getListChildren().get(1).widthProperty());
-        layoutYProperty().bind(field.heightProperty().subtract(field.heightProperty().divide(7)));
-        prefHeightProperty().bind(field.heightProperty().divide(7));
-        prefWidthProperty().bind(field.widthProperty().subtract(field.getListChildren().get(1).widthProperty()));
+    public void setLocation() {
+        layoutXProperty().bind(sideBar.widthProperty());
+        layoutYProperty().bind(backfield.heightProperty().subtract(backfield.heightProperty().divide(7)));
+        prefHeightProperty().bind(backfield.heightProperty().divide(7));
+        prefWidthProperty().bind(backfield.widthProperty().subtract(sideBar.widthProperty()));
 
         for (int i = 0; i < listRow.size(); i++) {
             listRow.get(i).prefWidthProperty().bind(this.widthProperty().divide(listRow.size()).subtract(row.getSpacing()));

@@ -2,17 +2,19 @@ package Engine.Windows;
 
 import javafx.scene.layout.Pane;
 
+import static Engine.Tools.Statics.*;
+
 public abstract class AbstractMainWindow extends Pane implements Window {
 
     AbstractMainWindow() {
+        abstractMainWindow = this;
     }
 
     @Override
-    public void setLocation(Backfield field) {
-        SideBar side = (SideBar) field.getListChildren().get(1);
-        layoutXProperty().bind(side.widthProperty());
-        prefHeightProperty().bind(field.heightProperty().subtract(field.heightProperty().divide(7)));
-        prefWidthProperty().bind(field.widthProperty().subtract(side.widthProperty()));
+    public void setLocation() {
+        layoutXProperty().bind(sideBar.widthProperty());
+        prefHeightProperty().bind(backfield.heightProperty().subtract(backfield.heightProperty().divide(7)));
+        prefWidthProperty().bind(backfield.widthProperty().subtract(sideBar.widthProperty()));
     }
 
 }

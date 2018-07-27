@@ -6,6 +6,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import static Engine.Tools.Statics.abstractMainWindow;
+
 public class Game extends Application {
 
     public static void main(String[] args) {
@@ -28,7 +30,7 @@ public class Game extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        TextMainWindow x = (TextMainWindow)root.getListChildren().get(2);
+        TextMainWindow x = (TextMainWindow)abstractMainWindow;
         for (int i = 0; i < 500; i++) {
             x.addText("TEST ");
         }

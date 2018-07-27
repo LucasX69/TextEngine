@@ -1,4 +1,4 @@
-package Engine.Tools;
+package Engine.Tools.Handlers;
 
 import Engine.Characters.Character;
 import Engine.Enums.Occupations.Job;

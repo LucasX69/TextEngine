@@ -2,6 +2,8 @@ package Engine.Windows;
 
 import javafx.scene.control.TextArea;
 
+import static Engine.Tools.Statics.*;
+
 public class TextMainWindow extends AbstractMainWindow {
 
     private TextArea text;
@@ -23,9 +25,9 @@ public class TextMainWindow extends AbstractMainWindow {
     }
 
     @Override
-    public void setLocation(Backfield field) {
-        super.setLocation(field);
-        text.prefWidthProperty().bind(field.widthProperty().subtract(field.getListChildren().get(1).widthProperty()));
-        text.prefHeightProperty().bind(field.heightProperty().subtract(field.getListChildren().get(0).heightProperty()));
+    public void setLocation() {
+        super.setLocation();
+        text.prefWidthProperty().bind(backfield.widthProperty().subtract(sideBar.widthProperty()));
+        text.prefHeightProperty().bind(backfield.heightProperty().subtract(controlWindow.heightProperty()));
     }
 }

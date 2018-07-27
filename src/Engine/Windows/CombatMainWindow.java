@@ -7,7 +7,7 @@ public class CombatMainWindow extends AbstractMainWindow {
     }
 
     @Override
-    public void setLocation(Backfield field) {
-        super.setLocation(field);
+    public void setLocation() {
+        super.setLocation();
     }
 }

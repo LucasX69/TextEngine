@@ -6,6 +6,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
+import static Engine.Tools.Statics.backfield;
+import static Engine.Tools.Statics.sideBar;
+
 public class SideBar extends Pane implements Window {
 
     private Button showHide;
@@ -15,7 +18,9 @@ public class SideBar extends Pane implements Window {
     private final double WIDTH = 100;
     private final double BUTTONSIZE = 40;
 
-    SideBar(Backfield field, String hidePath, String showPath) {
+    SideBar(String hidePath, String showPath) {
+        sideBar = this;
+
         showHide = new Button();
 
         try {
@@ -24,7 +29,7 @@ public class SideBar extends Pane implements Window {
 
             BackgroundImage show = new BackgroundImage(hideButtonImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                     BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-            BackgroundImage hide = new BackgroundImage(hideButtonImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+            BackgroundImage hide = new BackgroundImage(showButtonImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                     BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
             hideButton = new Background(hide);
@@ -35,20 +40,11 @@ public class SideBar extends Pane implements Window {
         }
 
         showHide.setBackground(hideButton);
-
-        showHide.setOnAction(event -> {
-            if (visibility) {
-                hide();
-            } else {
-                show(field);
-            }
-        });
-
         showHide.setPrefSize(BUTTONSIZE,BUTTONSIZE);
 
         getChildren().add(showHide);
 
-        showHide.fire();
+        setAction();
     }
 
     private void hide() {
@@ -59,22 +55,33 @@ public class SideBar extends Pane implements Window {
         prefWidthProperty().set(BUTTONSIZE);
     }
 
-    private void show(Backfield field) {
+    private void show() {
         showHide.setBackground(hideButton);
         visibility = true;
         setMinWidth(WIDTH);
-        prefWidthProperty().bind(field.widthProperty().divide(8));
+        prefWidthProperty().bind(backfield.widthProperty().divide(8));
         showHide.layoutXProperty().bind(this.widthProperty().subtract(BUTTONSIZE));
     }
 
+    private void setAction() {
+        showHide.setOnAction(event -> {
+            if (visibility) {
+                hide();
+            } else {
+                show();
+            }
+        });
+        showHide.fire();
+    }
+
     @Override
-    public void setLocation(Backfield field) {
+    public void setLocation() {
         setLayoutX(0);
         setLayoutY(0);
         setMinWidth(WIDTH);
-        layoutXProperty().bind(field.layoutXProperty());
-        layoutYProperty().bind(field.layoutYProperty());
-        prefWidthProperty().bind(field.widthProperty().divide(8));
-        prefHeightProperty().bind(field.heightProperty());
+        layoutXProperty().bind(backfield.layoutXProperty());
+        layoutYProperty().bind(backfield.layoutYProperty());
+        prefWidthProperty().bind(backfield.widthProperty().divide(8));
+        prefHeightProperty().bind(backfield.heightProperty());
     }
 }

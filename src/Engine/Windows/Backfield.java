@@ -8,14 +8,18 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Engine.Tools.Statics.backfield;
+
 public class Backfield extends Pane {
 
     private List<Region> listChildren;
 
     public Backfield(String showButtonPath, String hideButtonPath) {
+        backfield = this;
+
         listChildren = new ArrayList<>();
 
-        SideBar side = new SideBar(this, hideButtonPath, showButtonPath);
+        SideBar side = new SideBar(hideButtonPath, showButtonPath);
         ControlWindow bottom = new ControlWindow();
         AbstractMainWindow main = new TextMainWindow();
 
@@ -30,7 +34,7 @@ public class Backfield extends Pane {
 
         for (Region region : listChildren) {
             if (region instanceof Window) {
-                ((Window) region).setLocation(this);
+                ((Window) region).setLocation();
             }
         }
 
