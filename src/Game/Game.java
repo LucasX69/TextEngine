@@ -1,12 +1,12 @@
 package Game;
 
+import Engine.Tools.Handlers.StoryHandler;
+import Engine.Tools.Statics;
 import Engine.Windows.Backfield;
 import Engine.Windows.TextMainWindow;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import static Engine.Tools.Statics.abstractMainWindow;
 
 public class Game extends Application {
 
@@ -30,11 +30,14 @@ public class Game extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        TextMainWindow x = (TextMainWindow)abstractMainWindow;
-        for (int i = 0; i < 500; i++) {
-            x.addText("TEST ");
-        }
-
         root.assignKeys(scene);
+
+        // TODO Hard coded for now, need to figure out how to make it actually find the files.
+        try {
+            StoryHandler storyHandler = new StoryHandler("/Users/lucas/Documents/GitHub/TextEngine/src/Game/Story/Introduction.tes");
+            ((TextMainWindow)Statics.abstractMainWindow).addText(storyHandler.read());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

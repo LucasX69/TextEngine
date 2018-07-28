@@ -13,7 +13,7 @@ public class StoryHandler {
     private InputStreamReader inputStreamReader;
     private BufferedReader bufferedReader;
 
-    StoryHandler(String sPath) {
+    public StoryHandler(String sPath) {
         Path path = Paths.get(sPath);
         File file = path.toFile();
         try {
@@ -39,6 +39,8 @@ public class StoryHandler {
             while ((line = bufferedReader.readLine()) != null) {
                 if (isText(line)) {
                     text.append(line);
+                } else if (isNewLine(line)) {
+                    text.append("\n\n");
                 } else if (containsVariable(line)) {
                     // TODO needs to check if the variable is being assigned or being shown, act accordingly
                 } else if (isChoice(line)) {
@@ -148,12 +150,16 @@ public class StoryHandler {
         return text.toString();
     }
 
+    private boolean isNewLine(String line) {
+        return line.isEmpty();
+    }
+
     /**
      * @param line The line that is being read
      * @return True if it is not any of the other special lines
      */
     private boolean isText(String line) {
-        return !isSection(line) && !isSubSection(line) && !isChoice(line) && !containsVariable(line) && !isComment(line);
+        return !isSection(line) && !isSubSection(line) && !isChoice(line) && !containsVariable(line) && !isComment(line) && !isNewLine(line);
     }
 
     /**

@@ -4,6 +4,7 @@
 -- $$ is a variable -> $$PLAYER.name.set("")$$
 --                  -> $$PLAYER.name$$
 -- [[CHOICE_NAME|CHOICE_DESCRIPTION]] is a choice
+-- Put an empty line for an empty line
 #John Doe was born
 John Doe was born to a loving father and mother, who despite their shortcomings where good people.
 They were not poor perse, but they resided on the border of the poverty line.
