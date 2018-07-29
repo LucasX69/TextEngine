@@ -1,8 +1,11 @@
 package Engine.Tools;
 
+import Engine.Tools.Handlers.StoryHandler;
 import Engine.Windows.TextMainWindow;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+
+import java.io.IOException;
 
 import static Engine.Tools.Statics.abstractMainWindow;
 
@@ -24,7 +27,7 @@ public class Choice {
      * @param name The name of the choice, will be on the button
      * @param description A short description of the choice
      */
-    public Choice(boolean clear, String text, String name, String description) {
+    public Choice(boolean clear, String text, String name, String description, StoryHandler storyHandler) {
         TextMainWindow textMainWindow = (TextMainWindow) abstractMainWindow;
         this.name = name;
         this.description = description;
@@ -32,9 +35,17 @@ public class Choice {
             if (clear) {
                 textMainWindow.clear();
             } else {
-                textMainWindow.addText("\n");
+                textMainWindow.addText("\n\n");
             }
             textMainWindow.addText(text);
+
+            Statics.controlWindow.buttonClear();
+
+            try {
+                storyHandler.read(this.name);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         };
     }
 

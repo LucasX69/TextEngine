@@ -1,6 +1,7 @@
 package Engine.Tools.Handlers;
 
 import Engine.Tools.Choice;
+import Engine.Tools.Statics;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -9,13 +10,14 @@ import java.util.ArrayList;
 
 public class StoryHandler {
 
+    private File file;
     private FileInputStream fileInputStream;
     private InputStreamReader inputStreamReader;
     private BufferedReader bufferedReader;
 
     public StoryHandler(String sPath) {
         Path path = Paths.get(sPath);
-        File file = path.toFile();
+        file = path.toFile();
         try {
             fileInputStream = new FileInputStream(file);
         } catch (FileNotFoundException e) {
@@ -38,22 +40,28 @@ public class StoryHandler {
         if (choice.length == 0) {
             while ((line = bufferedReader.readLine()) != null) {
                 if (isText(line)) {
-                    text.append(line);
+                    text.append(line).append(" ");
                 } else if (isNewLine(line)) {
                     text.append("\n\n");
                 } else if (containsVariable(line)) {
                     // TODO needs to check if the variable is being assigned or being shown, act accordingly
                 } else if (isChoice(line)) {
                     // TODO these options need to go somewhere, probably to the ControlWindow, need to think about that.
-                    readChoices(line);
+                    handleChoices(readChoices(line));
+                    break;
                 }
             }
             return text.toString();
         } else {
             String txt = findChoice(choice[0]);
-            return txt.substring(2, txt.length());
+            if (txt.isEmpty()) {
+                return txt;
+            } else {
+                return txt.substring(2, txt.length());
+            }
         }
     }
+
 
     /**
      * @param line The line that contains the choices, they should be on their own line.
@@ -99,7 +107,7 @@ public class StoryHandler {
                                 String text = findChoice(name.toString());
                                 boolean clear = text.startsWith("1");
                                 text = text.substring(2, text.length());
-                                choices.add(new Choice(clear, text, name.toString(), description.toString()));
+                                choices.add(new Choice(clear, text, name.toString(), description.toString(), this));
                                 prefix = new StringBuilder();
                                 name = new StringBuilder();
                                 nameDone = false;
@@ -122,34 +130,55 @@ public class StoryHandler {
      * @throws IOException If the line can not be read.
      */
     private String findChoice(String name) throws IOException {
-        // TODO make it so that the bufferedReader starts from the start.
-
         String line;
         StringBuilder text = new StringBuilder();
         boolean found = false;
+        bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
         while((line = bufferedReader.readLine()) != null) {
-            if (isSubSection(line)) {
+            if (isSubSection(line) && !found) {
                 // Sub-Section
                 if (line.contains(name)) {
-                    found = true;
-                    text.append('2');
+                    if (line.substring(2, name.length() + 2).equals(name) && line.length() == name.length() + 2) {
+                        found = true;
+                        text.append('2');
+                    }
                 }
-            } else if(isSection(line)) {
+            } else if(isSection(line) && !found) {
                 // Section
                 if (line.contains(name)) {
-                    found = true;
-                    text.append('1');
+                    if (line.substring(1, name.length() + 1).equals(name) && line.length() == name.length() + 1) {
+                        found = true;
+                        text.append('1');
+                    }
                 }
             } else if((isSection(line) || isSubSection(line)) && found) {
                 break;
-            } else {
+            } else if (isChoice(line) && found){
+                handleChoices(readChoices(line));
+                break;
+            } else if (found){
                 text.append(" ").append(line);
             }
         }
         return text.toString();
     }
 
+    /**
+     * This method exists so it can be done from multiple places
+     * @param choices The choices that were found
+     */
+    private void handleChoices(ArrayList<Choice> choices) {
+        // TODO make this better
+        for (int i = 0; i < choices.size(); i++) {
+            Statics.controlWindow.setButton(choices.get(i), Statics.controlWindow.getListRow().get(i));
+        }
+    }
+
+    /**
+     * @param line The line that is being read
+     * @return True if the line is empty
+     */
     private boolean isNewLine(String line) {
         return line.isEmpty();
     }

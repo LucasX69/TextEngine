@@ -33,7 +33,7 @@ public class ControlWindow extends Pane implements Window {
         row3 = new HBox();
         vBox = new VBox(row, row2, row3);
 
-        createButtons();
+        buttonClear();
 
         // Add the vbox
         getChildren().addAll(vBox);
@@ -72,10 +72,11 @@ public class ControlWindow extends Pane implements Window {
      */
     public void buttonClear() {
         // Clear the buttons
+        createButtons();
         for (int i = 0; i < listRow.size(); i++) {
-            listRow.get(i).setOnAction(null);
-            listRow2.get(i).setOnAction(null);
-            listRow3.get(i).setOnAction(null);
+            listRow.get(i).setVisible(false);
+            listRow2.get(i).setVisible(false);
+            listRow3.get(i).setVisible(false);
         }
     }
 
@@ -86,6 +87,8 @@ public class ControlWindow extends Pane implements Window {
      */
     public void setButton(Choice choice, Button button) {
         button.setOnAction(choice.getEvent());
+        button.setText(choice.getName());
+        button.setVisible(true);
     }
 
     @Override
@@ -109,6 +112,14 @@ public class ControlWindow extends Pane implements Window {
      * A helper method that creates the buttons and adds them to the Window
      */
     private void createButtons() {
+        listRow.clear();
+        listRow2.clear();
+        listRow3.clear();
+
+        row.getChildren().clear();
+        row2.getChildren().clear();
+        row3.getChildren().clear();
+
         listRow.add(new Button("Q"));
         listRow.add(new Button("W"));
         listRow.add(new Button("E"));
@@ -133,5 +144,11 @@ public class ControlWindow extends Pane implements Window {
         row.getChildren().addAll(listRow);
         row2.getChildren().addAll(listRow2);
         row3.getChildren().addAll(listRow3);
+
+        setLocation();
+    }
+
+    public List<Button> getListRow() {
+        return listRow;
     }
 }
