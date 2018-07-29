@@ -1,12 +1,16 @@
 package Engine.Tools.Handlers;
 
+import Engine.Characters.Character;
 import Engine.Tools.Choice;
 import Engine.Tools.Statics;
 
 import java.io.*;
+import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
+import static Engine.Tools.Statics.characters;
 
 public class StoryHandler {
 
@@ -45,8 +49,8 @@ public class StoryHandler {
                     text.append("\n\n");
                 } else if (containsVariable(line)) {
                     // TODO needs to check if the variable is being assigned or being shown, act accordingly
+                    text.append(handleVariable(line));
                 } else if (isChoice(line)) {
-                    // TODO these options need to go somewhere, probably to the ControlWindow, need to think about that.
                     handleChoices(readChoices(line));
                     break;
                 }
@@ -158,7 +162,11 @@ public class StoryHandler {
                 handleChoices(readChoices(line));
                 break;
             } else if (found){
-                text.append(" ").append(line);
+                if (containsVariable(line)) {
+                    text.append(handleVariable(line));
+                } else {
+                    text.append(" ").append(line);
+                }
             }
         }
         return text.toString();
@@ -173,6 +181,65 @@ public class StoryHandler {
         for (int i = 0; i < choices.size(); i++) {
             Statics.controlWindow.setButton(choices.get(i), Statics.controlWindow.getListRow().get(i));
         }
+    }
+
+    private String handleVariable(String line) {
+        StringBuilder prefix = new StringBuilder();
+        StringBuilder suffix = new StringBuilder();
+        StringBuilder text = new StringBuilder();
+        StringBuilder name = new StringBuilder();
+        boolean nameDone = false;
+        StringBuilder var = new StringBuilder();
+        boolean varDone = false;
+        StringBuilder cmd = new StringBuilder();
+        for (char c : line.toCharArray()) {
+            if (c == '$' && !prefix.toString().equals("$$")) {
+                prefix.append(c);
+            } else if (c == '$' && prefix.toString().equals("$$") && !suffix.toString().equals("$$")){
+                suffix.append(c);
+            } else if(prefix.toString().equals("$$") && !suffix.toString().equals("$$")) {
+                if (!nameDone) {
+                    if (c == '.') {
+                        nameDone = true;
+                    } else {
+                        name.append(c);
+                    }
+                } else if(!varDone) {
+                    if (c == '.') {
+                        // TODO let it check for commands, ENUM??
+                        varDone = true;
+                    } else {
+                        var.append(c);
+                    }
+                }
+            } else {
+                if (suffix.toString().equals("$$") && cmd.toString().isEmpty()) {
+                    for (Character character : characters) {
+                        if (character.name.toLowerCase().equals(name.toString().toLowerCase()) ||
+                            character.type.name().toLowerCase().equals(name.toString().toLowerCase())) {
+                            for (Field field : character.getClass().getDeclaredFields()) {
+                                if (field.getName().toLowerCase().equals(var.toString().toLowerCase())) {
+                                    try {
+                                        text.append(field.get(character));
+                                        suffix = new StringBuilder();
+                                        prefix = new StringBuilder();
+                                        name = new StringBuilder();
+                                        var = new StringBuilder();
+                                        cmd = new StringBuilder();
+                                        nameDone = false;
+                                        varDone = false;
+                                    } catch (IllegalAccessException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                text.append(c);
+            }
+        }
+        return text.toString();
     }
 
     /**

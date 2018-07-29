@@ -30,7 +30,7 @@ public class CharacterHandler {
     }
 
     public String[] writeCharacter(Character character) {
-        if (character.getType() == Type.GENERIC) {
+        if (character.type == Type.GENERIC) {
 
         } else {
 

@@ -1,12 +1,20 @@
 package Game;
 
+import Engine.Characters.Character;
+import Engine.Enums.Occupations.Job;
+import Engine.Enums.People.Gender;
+import Engine.Enums.People.Type;
 import Engine.Tools.Handlers.StoryHandler;
-import Engine.Tools.Statics;
 import Engine.Windows.Backfield;
 import Engine.Windows.TextMainWindow;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+
+import static Engine.Tools.Statics.abstractMainWindow;
+import static Engine.Tools.Statics.characters;
 
 public class Game extends Application {
 
@@ -32,10 +40,13 @@ public class Game extends Application {
 
         root.assignKeys(scene);
 
+        characters = new ArrayList<>();
+        characters.add(new Character("Jason", 18, Gender.MALE, "Nothing","Las Vegas", Job.JOBLESS, Type.PLAYER));
+
         // TODO Hard coded for now, need to figure out how to make it actually find the files.
         try {
             StoryHandler storyHandler = new StoryHandler("/Users/lucas/Documents/GitHub/TextEngine/src/Game/Story/Introduction.tes");
-            ((TextMainWindow)Statics.abstractMainWindow).addText(storyHandler.read());
+            ((TextMainWindow)abstractMainWindow).addText(storyHandler.read());
         } catch (Exception e) {
             e.printStackTrace();
         }

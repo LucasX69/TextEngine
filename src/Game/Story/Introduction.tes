@@ -1,3 +1,4 @@
+-- This story is about nothing at all
 #The beginning
 Hello.
 This is the beginning
@@ -7,5 +8,8 @@ Dicks
 [[Hello4|This is stupid as well]]
 ##Hello2
 Hello3
+[[Hello4|This is stupid as well]]
 ##Hello4
 ARGHHH
+
+Hello $$PLAYER.NAME$$ Hello

@@ -6,15 +6,15 @@ import Engine.Enums.People.Type;
 
 public class Character {
 
-    private String name;
-    private int age;
-    private Gender gender;
-    private String background;
-    private String birthPlace;
-    private Job job;
-    private Type type;
+    public String name;
+    public int age;
+    public Gender gender;
+    public String background;
+    public String birthPlace;
+    public Job job;
+    public Type type;
 
-    Character() {
+    public Character() {
 
     }
 
@@ -34,33 +34,5 @@ public class Character {
         this(name, age, gender, job, type);
         this.background = background;
         this.birthPlace = birthPlace;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getBackground() {
-        return background;
-    }
-
-    public String getBirthPlace() {
-        return birthPlace;
-    }
-
-    public Job getJob() {
-        return job;
-    }
-
-    public Type getType() {
-        return type;
     }
 }

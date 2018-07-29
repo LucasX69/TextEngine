@@ -1,10 +1,12 @@
 -- Everything starting with -- is a comment.
 -- # is a Section, after every section, a clear will be done
 -- ## is a Sub-Section, continuation of the previous (Sub-)Section
--- $$ is a variable -> $$PLAYER.name.set("")$$
+-- $ is a variable -> $$PLAYER.name.set("")$$
 --                  -> $$PLAYER.name$$
 -- [[CHOICE_NAME|CHOICE_DESCRIPTION]] is a choice
 -- Put an empty line for an empty line
+-- Keep in mind, that in every file, every choice needs a unique name.
+-- Naming them like: "A1", "A2", etc. works, as long as the name is not the exact same.
 #John Doe was born
 John Doe was born to a loving father and mother, who despite their shortcomings where good people.
 They were not poor perse, but they resided on the border of the poverty line.

@@ -5,7 +5,8 @@ public enum JobType {
     // TODO add more
 
     POLICE("Police"),
-    HOSPITAL("Hospital");
+    HOSPITAL("Hospital"),
+    UNEMPLOYED("Unemployed");
 
     private String name;
 
